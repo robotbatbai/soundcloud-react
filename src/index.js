@@ -1,8 +1,19 @@
-var http = require('http');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TrackList from './components/TrackList';
 
-http.createServer(function (request, response) {
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-    response.end('Hello World\n');
-}).listen(8080);
+const tracks = [
+  {
+    id: 1,
+    title: 'Em của ngày hôm qua'
+  },
+  {
+    id: 2,
+    title: 'Cơn mưa ngang qua'
+  }
+];
 
-console.log('Server started');
+ReactDOM.render(
+  <TrackList tracks={tracks} />,
+  document.getElementById('app')
+);
